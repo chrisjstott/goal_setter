@@ -1,0 +1,6 @@
+<br>
+<% @goals_shown.each do |goal| %>
+  <%= link_to goal.content, goal_url(goal) %> (status: <%= goal.status %>)
+  <%= button_to "Edit Goal", edit_goal_url(goal), method: :get %>
+  <%= button_to "Remove Goal", goal_url(goal), method: :delete %>
+<% end %>

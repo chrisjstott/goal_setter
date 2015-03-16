@@ -1,0 +1,24 @@
+<h1>New Goal</h1>
+
+<form class="" action="<%= goals_url %>" method="post">
+
+  <%= csrf_input %>
+
+  <label for="content">Content</label>
+  <input type="text" name="goal[content]" value="<%= @goal.content %>" id="content">
+  <br>
+
+  <input type="radio" name="goal[privacy]"
+          value="private", id="goal_privacy_private"
+          <%= "checked" if @goal.privacy == "private" %>>
+  <label for="goal_privacy_private">Private</label>
+  <br>
+  <input type="radio" name="goal[privacy]"
+          value="public" id="goal_privacy_public"
+          <%= "checked" if @goal.privacy == "public" %>>
+  <label for="goal_privacy_public">Public</label>
+  <br>
+
+  <input type="submit" name="" value="Submit">
+
+</form>

@@ -45,7 +45,7 @@ feature "logging out" do
 
   it "begins with logged out state" do
     visit goals_url
-    expect(page).to have_content "Username"
+    expect(page).to have_content "Sign In"
   end
 
   it "doesn't show username on the homepage after logout" do
