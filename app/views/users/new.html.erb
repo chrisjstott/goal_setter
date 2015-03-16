@@ -1,0 +1,7 @@
+New User
+
+<form class="" action="<%= users_url %>" method="post">
+  <%= csrf_input %>
+  <%= render 'shared/username_password' %>
+  <input type="submit" value="Create User">
+</form>

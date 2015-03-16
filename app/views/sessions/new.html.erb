@@ -1,0 +1,7 @@
+Sign In
+
+<form class="" action="<%= session_url %>" method="post">
+  <%= csrf_input %>
+  <%= render 'shared/username_password' %>
+  <input type="submit" value="Sign In">
+</form>
