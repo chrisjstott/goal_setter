@@ -1,0 +1,26 @@
+<% @user.username %>
+
+<% if current_user == @user %>
+  <ul>
+    <% @user.goals.each do |goal| %>
+      <li><%= goal.content %><br><%= goal.user.username %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <ul>
+    <% @public_goals.each do |goal| %>
+      <li><%= goal.content %><br><%= goal.user.username %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<ul>
+  <% @user.comments.each do |comment| %>
+    <li><%= comment.content %><br><%= comment.author.username %></li>
+  <% end %>
+</ul>
+
+<form class="" action="<%= user_user_comments_url(@user) %>" method="post">
+  <%= csrf_input %>
+  <%= render 'shared/comment_form' %>
+</form>

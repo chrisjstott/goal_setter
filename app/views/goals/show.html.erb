@@ -4,3 +4,15 @@
 <%= @goal.status %><br>
 <%= @goal.privacy %><br><br>
 <%= link_to "goals", goals_url %>
+
+<ul>
+  <% @goal.comments.each do |comment| %>
+    <li><%= comment.content %><br><%= comment.author.username %></li>
+  <% end %>
+</ul>
+
+content
+<form class="" action="<%= goal_goal_comments_url(@goal) %>" method="post">
+  <%= csrf_input %>
+  <%= render 'shared/comment_form' %>
+</form>

@@ -17,6 +17,7 @@ class Goal < ActiveRecord::Base
   validate :valid_privacy_setting, :valid_status
 
   belongs_to :user
+  has_many :comments, foreign_key: :goal_id, class_name: :GoalComment
 
   def valid_privacy_setting
     unless ['private', 'public'].include?(self.privacy)

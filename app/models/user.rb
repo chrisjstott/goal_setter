@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   has_many :goals
+  has_many :comments, foreign_key: :recipient_id, class_name: :UserComment
 
   before_validation :ensure_session_token
 

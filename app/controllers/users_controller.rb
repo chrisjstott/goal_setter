@@ -17,6 +17,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @public_goals = @user.goals.where(privacy: :public)
   end
 
   private
